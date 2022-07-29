@@ -8,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IUserService
+    public interface IUserService : IEntityService<User>
     {
-        IResult Add(User user);
-        IResult Delete(User user);
-        IResult Update(User user);
-        IDataResult<List<User>> GetAll();
-        IDataResult<User> GetById(int id);
+
 
 
     }

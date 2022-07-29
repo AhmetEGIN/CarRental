@@ -9,14 +9,9 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IRentalService
+    public interface IRentalService : IEntityService<Rental>
     {
-        IResult Add(Rental rental);
-        IResult Update(Rental rental);
-        IResult Delete(Rental rental);
-        IDataResult<List<Rental>> GetAll();
         IDataResult<List<RentalDetailDto>> GetRentDetails();
-        IDataResult<Rental> GetById(int id);
         IDataResult<List<RentalDetailDto>> GetLeasedVehicles();
 
     }

@@ -24,6 +24,7 @@ namespace Business.Concrete
         {
             if (color.ColorName.Length>2)
             {
+                _colorDal.Add(color);
                 return new SuccessResult(Messages.ColorAdded);
             }
             _colorDal.Add(color);
