@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -20,24 +22,17 @@ namespace Business.Concrete
             _colorDal = colorDal;
         }
 
+        [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color color)
         {
-            if (color.ColorName.Length>2)
-            {
-                _colorDal.Add(color);
-                return new SuccessResult(Messages.ColorAdded);
-            }
             _colorDal.Add(color);
-            return new ErrorResult(Messages.CheckColorData);
+            return new SuccessResult(Messages.ColorAdded);
         }
+
 
         public IResult Delete(Color color)
         {
-            var result = _colorDal.Get(c => c.Id == color.Id);
-            if (result is null)
-            {
-                return new ErrorResult(Messages.ColorNotFound);
-            }
+
 
             _colorDal.Delete(color);
             return new SuccessResult(Messages.ColorDeleted);
