@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Business.Constants
 {
     public static class Messages
     {
+
         public static string CarAdded = "Auto wurde im Database hinzugefügt.";
         public static string CarDeleted = "Auto wurde von Database gelöscht.";
         public static string CarUpdated = "Die Daten Auto wurde mit neuen Informationen aktualisiert.";
@@ -57,7 +59,10 @@ namespace Business.Constants
         public static string RentalsListed = "Die Mietsverträge in Database werden aufgelistet.";
         public static string RentalListed = "Die Mietsverträge mit gegebenen ID wird gezeigt.";
 
-
-
+        public static string CarImageAdded = "Das Bild von jeweiligen Auto hinzugefügt.";
+        public static string CarImageDeleted = "Das Bild wurde gelöscht.";
+        public static string CarImageUpdated = "Das Bild von Auto aktualisiert";
+        public static string CarImagesCountLimit = "Mehr als 5 Bilder können kein Auto haben";
+        public static string DefaultImageNotExists = "Kein Default-Bild verfügbar";
     }
 }
