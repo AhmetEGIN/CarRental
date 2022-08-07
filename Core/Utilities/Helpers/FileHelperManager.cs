@@ -18,7 +18,7 @@ namespace Core.Utilities.Helpers
             if (!Directory.Exists(root))  // Exists metodu ile dosyanın var olup olmadığı ile ilgili boolean bir değer döndürebiliriz
             {
                 Directory.CreateDirectory(root);  // bu if bloğunda eklenmek istenen dizin'in var olup olmadığını kontrol ediyoruz. 
-                // eğer dizin yoksa CreateDirectory ile oluşturuyoruz
+                // eğer dizin yoksa CreateDirectory ile verilen root adında yeni bir dizin oluşturuyoruz
             }
 
             // Path : Dosya veya dizin yolu bilgileri üzerinde işlemler gerçekleştirir.
